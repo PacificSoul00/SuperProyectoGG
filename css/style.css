@@ -83,6 +83,24 @@ p {
 	margin: 0 0 15px 0;
 }
 
+.fondologin{
+	opacity: 0.8;
+
+}
+
+.login-form{
+	width: 350px;
+	background: #6f6f6f;
+	height: 450px;
+	padding: 80px 40px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	opacity: 0.95;
+}
+
 img {
 	max-width: 100%;
 }

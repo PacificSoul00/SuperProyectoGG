@@ -106,6 +106,15 @@ p {
   
 }
 
+.logo{
+	max-width: 300px;
+	max-height: 200px;
+}
+
+.bannertext{
+	font-size: 30px;
+}
+
 img {
 	max-width: 100%;
 }
@@ -287,6 +296,7 @@ ol {
 	display: inline-block;
 	margin-right: 45px;
 	position: relative;
+	
 }
 
 .header__top__left ul li:after {
@@ -434,12 +444,16 @@ ol {
 	padding: 15px 0;
 }
 
+#titulo_tienda{
+	color: #000;
+	-webkit-text-stroke-color: #ebebeb;
+}
 .header__logo a {
 	display: inline-block;
 }
 
 .header__menu {
-	padding: 24px 0;
+	padding: 30px ;
 }
 
 .header__menu ul li {
@@ -447,6 +461,8 @@ ol {
 	display: inline-block;
 	margin-right: 50px;
 	position: relative;
+	top:50px;
+	
 }
 
 .header__menu ul li .header__menu__dropdown {
@@ -464,6 +480,7 @@ ol {
 	transition: all, 0.3s;
 	opacity: 0;
 	visibility: hidden;
+	
 }
 
 .header__menu ul li .header__menu__dropdown li {
@@ -473,6 +490,7 @@ ol {
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
 	color: #333399;
+	
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -483,7 +501,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #7fad39;
+	color: #008f94;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -518,6 +536,7 @@ ol {
 .header__cart {
 	text-align: right;
 	padding: 24px 0;
+	;
 }
 
 .header__cart ul {
@@ -529,6 +548,8 @@ ol {
 	list-style: none;
 	display: inline-block;
 	margin-right: 15px;
+	position: relative;
+	top:50px;
 }
 
 .header__cart ul li:last-child {
@@ -564,6 +585,8 @@ ol {
 	font-size: 14px;
 	color: #6f6f6f;
 	display: inline-block;
+	position: relative;
+	top:40px;
 }
 
 .header__cart .header__cart__price span {
@@ -817,7 +840,7 @@ ol {
 	width: 30px;
 	line-height: 70px;
 	text-align: center;
-	border: 1px solid #ebebeb;
+	border: 1px solid #000000;
 	position: absolute;
 	left: -35px;
 	top: 50%;

@@ -27,7 +27,7 @@
     </style>
 </head>
 
-<body>
+<body>    
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -94,11 +94,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="https://www.instagram.com/voidstore.chile/"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Iniciar Sesion</a>
-                            </div>
+                            </div>       
                         </div>
                     </div>
                 </div>
@@ -116,7 +112,6 @@
                         <ul>
                             <li><a href="./index.html">Inicio</a></li>
                             <li><a href="./shop-grid.html">Tienda</a></li>
-                            <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contacto</a></li>
                         </ul>
                     </nav>
@@ -137,24 +132,33 @@
         </div>
     </header>
     <!-- Header Section End -->
-    
+    <section class="container">
+        <!--Insertamos Api de FechayHora-->
+        <div class="row">
+            <div class="col-lg-10">                   
+            </div>              
+            <div class="timedate">                        
+                Fecha y hora actual: <dt><label for="" id="FechaHora"></label></dt>
+            </div>
+        </div>
+    </section>
     <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-            <img class="fondologin" src="img/banner/banner1.jpg" alt="">
-            <form id="LoginForm" class="login-form" action="">
+            <img class="fondologin" src="img/banner/fondo.jpg" alt="">
+            <form id="login-form" class="login-form" action="index.html">
                 <div class="form-group">
-                    <label for="uname" class="text-white">Nombre de usuario: </label>
-                    <input type="text" class="form-control" placeholder="usuario" name="nomusuario" id="nomusuario">
+                    <label for="uname" class="text-white">Ingrese su usuario o Correo </label>
+                    <input type="text" class="form-control" placeholder="usuario" name="loginusuario" id="loginusuario">
                 </div>
                 <div class="form-group">
-                    <label for="" class="text-white">Contraseña: </label>
-                    <input type="password" class="form-control" placeholder="•••••••" name="passusuario" id="passusuario">
+                    <label for="" class="text-white">Contraseña </label>
+                    <input type="password" class="form-control" placeholder="•••••••" name="loginPassword" id="loginPassword">
                 </div>
-                <button type="submit" class="btn.login bg-purple ">Iniciar Sesion</button>
+                <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" type="submit" onclick="return inicioForm();">Iniciar Sesion</a> </div>
                 <div class="bottom-text">
-                    No tienes cuenta? <a class="Signup" href="#">Registrate</a>
+                    No tienes cuenta? <a class="Signup" href="register.html">Registrate</a>
                 </div>
-
+                <div id="error"></div>   
             </form>
 
 
@@ -163,20 +167,6 @@
 
     </section>
    
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
 
 
     <!-- Blog Section End -->
@@ -256,6 +246,20 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/validaciones.js"></script>
+    <!--Llamada a la Api de Fecha y Hora-->
+    <script>
+        $(
+            function(){
+                $.get('http://api.timezonedb.com/v2.1/get-time-zone?key=AKR4A9FTRDJM&format=json&by=position&lat=-33.45694&lng=-70.64827')
+                .done(function(data)
+                {
+                    $("#FechaHora").html(data.formatted);
+                }
+                );
+            }
+        );
+    </script>
 
 
 

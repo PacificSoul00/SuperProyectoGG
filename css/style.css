@@ -74,6 +74,12 @@ h6 {
 	font-size: 16px;
 }
 
+#map {
+	width: 100%;
+    height: 500px;
+    box-shadow: 5px 5px 5px #888;
+}
+
 p {
 	font-size: 16px;
 	font-family: "Cairo", sans-serif;
@@ -85,7 +91,15 @@ p {
 
 .fondologin{
 	opacity: 0.8;
+	max-height: 60%;
 
+}
+
+#error{
+	background-color: red;
+	color: white;
+	border-radius: 7px;
+	padding: 10px 10px;
 }
 
 .login-form{
@@ -99,6 +113,28 @@ p {
 	top: 50%;
 	transform: translate(-50%,-50%);
 	opacity: 0.95;
+}
+
+.register-form{
+	width: 650px;
+	background: hsl(0, 0%, 33%);
+	height: 550px;
+	padding: 70px 40px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-60%,-70%);
+	opacity: 0.95;	
+}
+
+.timedate{
+	border-radius: 8px;
+	border-style: solid;
+  	border-width: 3px;	
+	border-color: #333399;
+	font-size: large;
+	color: purple;
 }
 
 .Signup{
@@ -283,7 +319,7 @@ ol {
 -----------------------*/
 
 .header__top {
-	background: #f5f5f5;
+	background: #6666ff;
 }
 
 .header__top__left {
@@ -453,16 +489,22 @@ ol {
 }
 
 .header__menu {
-	padding: 30px ;
+	padding: 10px;		
 }
+
 
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
-	margin-right: 50px;
+	color: white;
+	margin-right: 10px;
 	position: relative;
 	top:50px;
-	
+	border-style: solid;
+  	border-width: 20px 50px;
+	border-radius: 8px;
+	border-color: #333399;
+	background-color: #333399;
 }
 
 .header__menu ul li .header__menu__dropdown {
@@ -511,7 +553,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #333399;
+	color: black;
 }
 
 .header__menu ul li:last-child {
@@ -520,7 +562,7 @@ ol {
 
 .header__menu ul li a {
 	font-size: 14px;
-	color: #252525;
+	color: white;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -633,7 +675,7 @@ ol {
 }
 
 .hero__categories__all {
-	background: #333399;
+	background: #333399;	
 	position: relative;
 	padding: 10px 25px 10px 40px;
 	cursor: pointer;
@@ -688,7 +730,7 @@ ol {
 .hero__search__form {
 	width: 610px;
 	height: 50px;
-	border: 1px solid #ebebeb;
+	border: 1px solid #ebebeb;	
 	position: relative;
 	float: left;
 }
@@ -1669,6 +1711,7 @@ ol {
 .product__pagination,
 .blog__pagination {
 	padding-top: 10px;
+	margin-left: 300px;
 }
 
 .product__pagination a,
@@ -2821,77 +2864,6 @@ ol {
 }
 
 /*---------------------
-  Map
------------------------*/
-
-.map {
-	height: 500px;
-	position: relative;
-}
-
-.map iframe {
-	width: 100%;
-}
-
-.map .map-inside {
-	position: absolute;
-	left: 50%;
-	top: 160px;
-	-webkit-transform: translateX(-175px);
-	-ms-transform: translateX(-175px);
-	transform: translateX(-175px);
-}
-
-.map .map-inside i {
-	font-size: 48px;
-	color: #7fad39;
-	position: absolute;
-	bottom: -75px;
-	left: 50%;
-	-webkit-transform: translateX(-18px);
-	-ms-transform: translateX(-18px);
-	transform: translateX(-18px);
-}
-
-.map .map-inside .inside-widget {
-	width: 350px;
-	background: #ffffff;
-	text-align: center;
-	padding: 23px 0;
-	position: relative;
-	z-index: 1;
-	-webkit-box-shadow: 0 0 20px 5px rgba(12, 7, 26, 0.15);
-	box-shadow: 0 0 20px 5px rgba(12, 7, 26, 0.15);
-}
-
-.map .map-inside .inside-widget:after {
-	position: absolute;
-	left: 50%;
-	bottom: -30px;
-	-webkit-transform: translateX(-6px);
-	-ms-transform: translateX(-6px);
-	transform: translateX(-6px);
-	border: 12px solid transparent;
-	border-top: 30px solid #ffffff;
-	content: "";
-	z-index: -1;
-}
-
-.map .map-inside .inside-widget h4 {
-	font-size: 22px;
-	font-weight: 700;
-	color: #1c1c1c;
-	margin-bottom: 4px;
-}
-
-.map .map-inside .inside-widget ul li {
-	list-style: none;
-	font-size: 16px;
-	color: #666666;
-	line-height: 26px;
-}
-
-/*---------------------
   Contact Form
 -----------------------*/
 
@@ -3492,14 +3464,7 @@ ol {
 		text-align: center;
 		padding: 10px 15px 10px;
 	}
-	.map .map-inside {
-		-webkit-transform: translateX(-125px);
-		-ms-transform: translateX(-125px);
-		transform: translateX(-125px);
-	}
-	.map .map-inside .inside-widget {
-		width: 250px;
-	}
+	
 	.product__details__tab .nav-tabs li {
 		margin-right: 15px;
 	}
@@ -3512,4 +3477,7 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
+	
+
+	
 }

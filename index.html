@@ -118,7 +118,10 @@ f        </div>
                             <li><a href="./shop-grid.html">Tienda</a></li>
                             <li><a href="./contact.html">Contacto</a></li>
                         </ul>
-                    </nav>
+                        <ul>
+                            
+                        </ul>
+                    </nav>                    
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
@@ -128,18 +131,33 @@ f        </div>
                         </ul>
                         <div class="header__cart__price">Total: <span>$0</span></div>
                     </div>
-                </div>
+                    
+                    
+                </div>               
             </div>
+
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
+                
             </div>
+            
         </div>
+        
     </header>
     <!-- Header Section End -->
-
+    
     <!-- Hero Section Begin -->
-    <section class="hero">
+    <section class="hero"> 
         <div class="container">
+            <!--Insertamos valores que me entrega la Api de Hora y Fecha-->
+            <div class="row">
+                <div class="col-lg-10">                   
+                </div>              
+                <div class="timedate">                        
+                    Fecha y hora actual: <dt><label for="" id="FechaHora"></label></dt>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero__categories">
@@ -156,11 +174,7 @@ f        </div>
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    Todas las categorias
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
+                            <form action="#">                               
                                 <input type="text" placeholder="¿Que es lo que necesitas?">
                                 <button type="submit" class="site-btn">BUSCAR</button>
                             </form>
@@ -200,17 +214,7 @@ f        </div>
                         <a class="carousel-control-next" href="#demo" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
-                    </div>
-
-
-                    <!--<div class="hero__item set-bg" data-setbg="img/banner_prueba/banner1.jpg">
-                        <div class="hero__text">
-                            <span>NUEVAS CARTAS</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
-                    </div>-->
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -261,9 +265,10 @@ f        </div>
                     </div>
                 </div>
             </div>
+        
             <div class="row featured__filter">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
+                    <div class="featured__item"> <!-- PRODUCTO DESTACADO -->
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -272,8 +277,8 @@ f        </div>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">Sobre de Pokemon Sol y Luna</a></h6>
+                            <h5>$3.500</h5>
                         </div>
                     </div>
                 </div>
@@ -384,10 +389,12 @@ f        </div>
                 </div>
             </div>
         </div>
+    -->
     </section>
     <!-- Featured Section End -->
 
     <!-- Banner Begin -->
+    <!--
     <div class="banner">
         <div class="container">
             <div class="row">
@@ -404,9 +411,11 @@ f        </div>
             </div>
         </div>
     </div>
+    -->
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
+    <!--
     <section class="latest-product spad">
         <div class="container">
             <div class="row">
@@ -608,6 +617,7 @@ f        </div>
             </div>
         </div>
     </section>
+    -->
     <!-- Latest Product Section End -->
 
     <!-- Blog Section Begin -->
@@ -636,6 +646,7 @@ f        </div>
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
@@ -667,6 +678,7 @@ f        </div>
                     </div>
                 </div>
             </div>
+        -->
         </div>
     </section>
     <!-- Blog Section End -->
@@ -746,6 +758,19 @@ f        </div>
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <!--Llamada a la Api de Fecha y Hora-->
+    <script>
+        $(
+            function(){
+                $.get('http://api.timezonedb.com/v2.1/get-time-zone?key=AKR4A9FTRDJM&format=json&by=position&lat=-33.45694&lng=-70.64827')
+                .done(function(data)
+                {
+                    $("#FechaHora").html(data.formatted);
+                }
+                );
+            }
+        );
+    </script>
 
 
 

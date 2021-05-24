@@ -2,12 +2,13 @@
 <html lang="zxx">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VoidStore | Contacto</title>
+    <title>Void Store</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -21,26 +22,29 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
-    
-    
+    <style>
+        body { background-color: #ffff; }
+    </style>
 </head>
 
-<body> 
+<body>    
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo ">
+        <div class="humberger__menu__logo">
             <a href="#"><img src="img/logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">Total: <span>$150.00</span></div>
+            <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">            
             <div class="header__top__right__auth">
@@ -49,9 +53,8 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Inicio</a></li>
+                <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./shop-grid.html">Tienda</a></li>
-                <li><a href="./blog.html">Nosotros</a></li>
                 <li><a href="./contact.html">Contacto</a></li>
             </ul>
         </nav>
@@ -91,11 +94,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="https://www.instagram.com/voidstore.chile/"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        
-                            <div class="header__top__right__auth">
-                                <a href="login.html"><i class="fa fa-user"></i> Iniciar Sesion</a>
-                            </div>
+                            </div>       
                         </div>
                     </div>
                 </div>
@@ -108,22 +107,22 @@
                         <a href="./index.html"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-6 ">
+                <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./index.html">Inicio</a></li>
                             <li><a href="./shop-grid.html">Tienda</a></li>
-                            <li class="active" ><a href="./contact.html">Contacto</a></li>
+                            <li><a href="./contact.html">Contacto</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
-                        <div class="header__cart__price">Total: <span>$0</span></div>
+                        <div class="header__cart__price">Total: <span>$0.00</span></div>
                     </div>
                 </div>
             </div>
@@ -133,143 +132,72 @@
         </div>
     </header>
     <!-- Header Section End -->
-
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">           
-            <!--Insertamos Api de FechayHora-->
-            <div class="row">
-                <div class="col-lg-10">                   
-                </div>              
-                <div class="timedate">                        
-                    Fecha y hora actual: <dt><label for="" id="FechaHora"></label></dt>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Categorias</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Cartas Pokémon</a></li>
-                            <li><a href="#">Cartas Digimon</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                
-                                <input type="text" placeholder="¿Que es lo que necesitas?">
-                                <button type="submit" class="site-btn">BUSCAR</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+56 9 3592 2214</h5>
-                                <span>Soporte 24/7</span>
-                            </div>
-                        </div>
-                    </div>
-    <!-- Hero Section End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Contactenos</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Contactanos</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="container">
+        <!--Insertamos Api de FechayHora-->
+        <div class="row">
+            <div class="col-lg-10">                   
+            </div>              
+            <div class="timedate">                        
+                Fecha y hora actual: <dt><label for="" id="FechaHora"></label></dt>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
+    
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+            <img class="fondologin" src="img/banner/fondo.jpg" alt="">
+            <form id="register-form" class="register-form" action="">
+                <div class="form-group">
+                    <label for="uname" class="text-white">Nombre de usuario </label>
+                    <input type="text" class="form-control" placeholder="Ingrese su nombre de usuario" name="nomusuario" id="nomusuario">
+                </div>
+                <div class="form-row"> 
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="uname" class="text-white">Nombre </label>
+                            <input type="text" class="form-control" placeholder="Ingrese su nombre" name="inputNombre" id="inputNombre">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="uname" class="text-white">Apellidos </label>
+                            <input type="text" class="form-control" placeholder="Ingrese sus apellidos" name="inputApellidos" id="inputApellidos">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-white" for="inputEmailAddress">Correo</label>
+                    <input class="form-control" id="inputEmailAddress" type="text" placeholder="Ingresa tu correo"  />
+                </div>
+                <div class="form-row"> 
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="text-white">Contraseña </label>
+                            <input type="password" class="form-control" placeholder="•••••••" name="inputPassword" id="inputPassword">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="" class="text-white">Confirmacion de Contraseña </label>
+                            <input type="password" class="form-control" placeholder="•••••••" name="inputConfirmPassword" id="inputConfirmPassword">
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary btn-block" type="submit" value="Registrar Cuenta" >
+                <div class="bottom-text">
+                    Ya tienes una cuenta? <a class="Signup" href="login.html">Inicia sesion</a>
+                </div>
+                <div style="visibility:hidden;" id="error"></div>    
+            </form>
+ 
 
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_phone"></span>
-                        <h4>Telefono</h4>
-                        <p>+56 9 3592 2214</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_pin_alt"></span>
-                        <h4>Dirección</h4>
-                        <p>Estación de metro Mirador</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_clock_alt"></span>
-                        <h4>Horario de apertura</h4>
-                        <p>10:00 am - 20:00 pm</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_mail_alt"></span>
-                        <h4>Correo</h4>
-                        <p>void.store.chile@gmail.com</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </section>
-    <!-- Contact Section End -->
-    <section>
-        <div id="map">
-
-        </div>
-    </section>
-
         
 
-    <!-- Inicio del formulario de contactop -->
-    <div class="contact-form spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact__form__title">
-                        <h2>Dejanos un mensaje!</h2>
-                    </div>
-                </div>
-            </div>
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input id="txtcNombre" type="text" placeholder="Tu nombre"> <!-- Variable nombre del formulario de contacto-->
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input id="txtcEmail" type="text" placeholder="Tu email">
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <textarea placeholder="Tu mensaje"></textarea>
-                        <button type="submit" class="site-btn">ENVIAR MENSAJE</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Formulario de contacto -->
+    </section>
+   
+    
+    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
@@ -281,7 +209,7 @@
                             <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Direccion: Estacion de Metro Mirador</li>
+                            <li>Direccion: Calle Falsa 123</li>
                             <li>Celular: +56 9 3592 2214</li>
                             <li>Email: correoempresa@voidstore.cl</li>
                         </ul>
@@ -294,7 +222,7 @@
                             <li><a href="#">Sobre nosotros</a></li>
                             <li><a href="#">Nuestra tienda</a></li>
                             <li><a href="#">Compra segura</a></li>
-                            <li><a href="#">Info Envíos</a></li>
+                            <li><a href="#">Información de Envío</a></li>
                             <li><a href="#">Politicas de privacidad</a></li>
                         </ul>
                         <ul>
@@ -311,7 +239,7 @@
                         <h6>Subscribete en nuestro correo</h6>
                         <p>Al subscribirse se te enviará información sobre nuestras últimas ofertas y stock</p>
                         <form action="#">
-                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Ingresa tu email">
                             <button type="submit" class="site-btn">Subscribete</button>
                         </form>
                         <div class="footer__widget__social">
@@ -337,7 +265,6 @@
     </footer>
     <!-- Footer Section End -->
 
-
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -347,7 +274,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="js/validaciones.js"></script>
     <!--Llamada a la Api de Fecha y Hora-->
     <script>
         $(
@@ -362,23 +289,6 @@
         );
     </script>
 
-    <!--LLamado a la api de mapas leaflet-->
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script>
-        //Cargando nuestro mapa
-        var mapsipe = L.map('map').
-        setView([-33.51311,-70.60617], 
-        20); 
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-            maxZoom: 18
-      }).addTo(mapsipe);
-    </script>
-    <script>
-        var marker = L.marker([-33.51311,-70.60617]).addTo(mapsipe);
-        marker.bindPopup("Hola! Aqui nos Ubicamos.").openPopup();
-
-    </script>
 
 
 </body>

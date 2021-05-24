@@ -41,7 +41,7 @@
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
             </ul>
             <div class="header__cart__price">Total: <span>$150.00</span></div>
-f        </div>
+        </div>
         <div class="humberger__menu__widget">            
             <div class="header__top__right__auth">
                 <a href="#"><i class="fa fa-user"></i> Iniciar Sesion</a>
@@ -136,7 +136,15 @@ f        </div>
 
     <!-- Hero Section Begin -->
     <section class="hero">
-        <div class="container">
+        <div class="container">           
+            <!--Insertamos Api de FechayHora-->
+            <div class="row">
+                <div class="col-lg-10">                   
+                </div>              
+                <div class="timedate">                        
+                    Fecha y hora actual: <dt><label for="" id="FechaHora"></label></dt>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero__categories">
@@ -366,7 +374,7 @@ f        </div>
                                 <div class="col-lg-4">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/product/discount/sobre_sundandmoon_270x.jpg">
+                                            data-setbg="img/product/discount/pd-1.jpg">
                                             <div class="product__discount__percent">-20%</div>
                                             <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -393,9 +401,9 @@ f        </div>
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Vegetables</span>
-                                            <h5><a href="#">Vegetables’package</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <span>Figuras</span>
+                                            <h5><a href="#">Figura de Pikachu</a></h5>
+                                            <div class="product__item__price">$3.500 <span>$4.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -411,9 +419,9 @@ f        </div>
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Dried Fruit</span>
-                                            <h5><a href="#">Mixed Fruitss</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <span>Figuras</span>
+                                            <h5><a href="#">Figura de Squirtle</a></h5>
+                                            <div class="product__item__price">$3.500 <span>$4.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -429,9 +437,9 @@ f        </div>
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Dried Fruit</span>
-                                            <h5><a href="#">Raisin’n’nuts</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <span>Figuras</span>
+                                            <h5><a href="#">Figura de Agumon</a></h5>
+                                            <div class="product__item__price">$3.500 <span>$4.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -447,9 +455,9 @@ f        </div>
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Dried Fruit</span>
-                                            <h5><a href="#">Raisin’n’nuts</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <span>Sobres</span>
+                                            <h5><a href="#">Pokemon Espada y Escudo</a></h5>
+                                            <div class="product__item__price">$3.500 <span>$4.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -465,9 +473,9 @@ f        </div>
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>Dried Fruit</span>
-                                            <h5><a href="#">Raisin’n’nuts</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
+                                            <span>Sobres</span>
+                                            <h5><a href="#">Pokemon Antiguos Origenes</a></h5>
+                                            <div class="product__item__price">$3.500 <span>$4.000</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -478,16 +486,20 @@ f        </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <span>Sort By</span>
+                                    <span>Ordenar por</span>
                                     <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
+                                        <option value="0">Precio mas bajo</option>
+                                        <option value="0">Precio mas alto</option>
+                                        <option value="0">A-Z</option>
+                                        <option value="0">Z-A</option>
+                                        <option value="0">Mas reciente</option>
+                                        <option value="0">Mas antiguo</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>16</span> Products found</h6>
+                                    <!--<h6><span>16</span> Producto encontrado</h6> -->
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -509,8 +521,8 @@ f        </div>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="#">Sobre de Pokemon Sol y Luna</a></h6>
+                                    <h5>$3.500</h5>
                                 </div>
                             </div>
                         </div>
@@ -524,12 +536,12 @@ f        </div>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="#">Figura Pokemon de Pikachu</a></h6>
+                                    <h5>$3.500</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <!--<div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
                                     <ul class="product__item__pic__hover">
@@ -682,10 +694,9 @@ f        </div>
                     </div>
                     <div class="product__pagination">
                         <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
                         <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
+                -->
                 </div>
             </div>
         </div>
@@ -767,6 +778,19 @@ f        </div>
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <!--Llamada a la Api de Fecha y Hora-->
+    <script>
+        $(
+            function(){
+                $.get('http://api.timezonedb.com/v2.1/get-time-zone?key=AKR4A9FTRDJM&format=json&by=position&lat=-33.45694&lng=-70.64827')
+                .done(function(data)
+                {
+                    $("#FechaHora").html(data.formatted);
+                }
+                );
+            }
+        );
+    </script>
 
 
 

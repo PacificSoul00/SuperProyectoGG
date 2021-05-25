@@ -6,13 +6,16 @@ var correo = document.getElementById('inputEmailAddress');
 var contrasena = document.getElementById('inputPassword');
 var contrasena2 = document.getElementById('inputConfirmPassword');
 var error = document.getElementById('error');
-var correoInicio = document.getElementById('inputEmail');
-var passInicio = document.getElementById('inputPass');
-var monto = document.getElementById('inputMonto');
-// Variables de registro
+// Variables de inicio
 var userlog = document.getElementById('loginusuario');
 var passlog = document.getElementById('loginPassword');
 var expReg= /^[a-zA-Z0-9.+-]+@+[a-zA-Z0-9-]+.[a-zA-Z0-9-.]/;
+// Variables de Direccion
+var direccion = document.getElementById('direccion');
+var region = document.getElementById('inputRegion');
+var comuna = document.getElementById('inputComuna');
+var fono = document.getElementById('inputFono');
+
 
 
 
@@ -91,6 +94,44 @@ function inicioForm(){
 
     
     if(userlog.value === null || userlog.value === '' || passlog.value === null || passlog.value === ''){
+        return false;
+    }
+
+    else{
+        document.getElementById('error').style.visibility = 'hidden';
+        return window.location.href = 'index.html'
+    }
+}
+
+function direccionForm(){
+    console.log('Enviando formulario...');
+
+    var mensajesError = [];
+
+    if(direccion.value === null || direccion.value === ''){
+        mensajesError.push('Porfavor ingrese su direccion')
+    }
+
+    if(region.value === null || region.value === ''){
+        mensajesError.push('Porfavor seleccione una region')
+
+    }
+
+    if(comuna.value === null || comuna.value === ''){
+        mensajesError.push('Porfavor seleccione su comuna')
+
+    }
+
+    if(fono.value === null || fono.value === ''){
+        mensajesError.push('Porfavor ingrese un numero telefonico')
+
+    }
+
+    error.innerHTML = mensajesError.join('<br />  ');
+    document.getElementById('error').style.visibility = 'visible';
+
+    
+    if(direccion.value === null || direccion.value === '' || region.value === null || region.value === ''||comuna.value === null || comuna.value === ''||fono.value === null || fono.value === ''){
         return false;
     }
 

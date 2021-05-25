@@ -2938,6 +2938,18 @@ ol {
 	.footer-spad{
 		margin-top: 100px;
 	}
+	.tamano-comuna{
+		width: 200px;
+	}
+	.tamano-region{
+		width: 200px;
+		margin-top: 1px;
+		margin-bottom: 20px;
+	}
+	.texto-region{
+		margin-right: 10px;
+		display: flex;
+	}
 }
 
 /* Medium Device = 1200px */

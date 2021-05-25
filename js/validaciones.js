@@ -12,6 +12,7 @@ var monto = document.getElementById('inputMonto');
 // Variables de registro
 var userlog = document.getElementById('loginusuario');
 var passlog = document.getElementById('loginPassword');
+var expReg= /^[a-zA-Z0-9.+-]+@+[a-zA-Z0-9-]+.[a-zA-Z0-9-.]/;
 
 
 
@@ -24,26 +25,36 @@ var form = document.getElementById('register-form');
 
         
         if(user.value === null || user.value === ''){
-            mensajesError.push('Ingrese su Nombre de usuario')
+            mensajesError.push('Porfavor ingrese su Nombre de usuario')
         }
     
         if(nombre.value === null || nombre.value === ''){
-            mensajesError.push('Ingrese su nombre')
+            mensajesError.push('Porfavor ingrese su nombre')
     
         }
     
         if(apellidos.value === null || apellidos.value === ''){
-            mensajesError.push('Ingrese su apellido')
+            mensajesError.push('Porfavor ingrese su apellido')
     
         }
     
         if(correo.value === null || correo.value === ''){
-            mensajesError.push('Ingrese un correo')
+            mensajesError.push('Porfavor ingrese un correo')
     
+        }
+
+        var esValido = expReg.test(correo.value);
+        if(esValido == false){
+            mensajesError.push('Su correo no es valido')
         }
     
         if(contrasena.value === null || contrasena.value === ''){
-            mensajesError.push('Ingrese una contrasena')
+            mensajesError.push('Porfavor ingrese una contrasena')
+    
+        }
+
+        if(contrasena.value.length < 7){
+            mensajesError.push('La contrasena es insegura')
     
         }
     
@@ -55,7 +66,7 @@ var form = document.getElementById('register-form');
         error.innerHTML = mensajesError.join('<br /> ');
         document.getElementById('error').style.visibility = 'visible';
 
-        if(user.value === null || user.value === ''|| nombre.value === null || nombre.value === ''|| apellidos.value === null || apellidos.value === '' || correo.value === null || correo.value === ''|| contrasena.value === null || contrasena.value === ''|| contrasena2.value === null || contrasena2.value === ''|| contrasena2.value !== contrasena.value){
+        if(user.value === null || user.value === ''|| nombre.value === null || nombre.value === ''|| apellidos.value === null || apellidos.value === '' || correo.value === null || correo.value === ''|| contrasena.value === null || contrasena.value === ''|| contrasena2.value === null || contrasena2.value === ''|| contrasena2.value !== contrasena.value || esValido == false){
             return false;
         }
         else{
@@ -76,6 +87,7 @@ function inicioForm(){
     }
 
     error.innerHTML = mensajesError.join('<br />  ');
+    document.getElementById('error').style.visibility = 'visible';
 
     
     if(userlog.value === null || userlog.value === '' || passlog.value === null || passlog.value === ''){
@@ -83,37 +95,7 @@ function inicioForm(){
     }
 
     else{
+        document.getElementById('error').style.visibility = 'hidden';
         return window.location.href = 'index.html'
     }
-}
-
-
-function saveRenta(){
-    console.log('Enviando formulario...');
-
-    var inicioError = [];
-
-    if(monto.value === null || monto.value === ''){
-        inicioError.push('Ingrese su monto')
-
-    }
-
-    error.innerHTML = inicioError.join('<br />  ');
-
-    return false;
-}
-
-function saveSoli(){
-    console.log('Enviando formulario...');
-
-    var inicioError = [];
-
-    if(direccion.value === null || direccion.value === ''){
-        inicioError.push('Ingrese la direccion')
-
-    }
-
-    error.innerHTML = inicioError.join('<br />  ');
-
-    return false;
 }

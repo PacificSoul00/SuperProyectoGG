@@ -75,9 +75,14 @@ h6 {
 }
 
 #map {
-	width: 100%;
+	width: 70%;
     height: 500px;
-    box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #673ab7;
+}
+
+#logometro{
+	max-width: 35px;
+	max-height: 35px;
 }
 
 p {
@@ -92,7 +97,11 @@ p {
 .fondologin{
 	opacity: 0.8;
 	max-height: 60%;
-
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #673ab7;
 }
 
 #error{
@@ -105,7 +114,7 @@ p {
 .login-form{
 	width: 350px;
 	background: #6f6f6f;
-	height: 450px;
+	height: 400px;
 	padding: 80px 40px;
 	border-radius: 10px;
 	position: absolute;
@@ -113,18 +122,19 @@ p {
 	top: 50%;
 	transform: translate(-50%,-50%);
 	opacity: 0.95;
+		
 }
 
 .register-form{
-	width: 650px;
-	background: hsl(0, 0%, 33%);
-	height: 550px;
-	padding: 70px 40px;
+	width: 600px;
+	background: #6f6f6f;
+	height: fit-content;
+	padding: 80px 40px;
 	border-radius: 10px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-60%,-70%);
+	transform: translate(-50%,-50%);
 	opacity: 0.95;	
 }
 
@@ -2925,6 +2935,9 @@ ol {
 	.container {
 		max-width: 1170px;
 	}
+	.footer-spad{
+		margin-top: 100px;
+	}
 }
 
 /* Medium Device = 1200px */
@@ -2932,6 +2945,10 @@ ol {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.header__menu ul li {
 		margin-right: 45px;
+	}
+	#hero_form{
+		width: 1000px;
+		margin-top: 125px;
 	}
 	.hero__search__form {
 		width: 490px;
@@ -2954,6 +2971,7 @@ ol {
 	.shoping__discount form input {
 		width: 240px;
 	}
+	
 }
 
 /* Tablet Device = 768px */
@@ -2961,6 +2979,9 @@ ol {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.hero__categories {
 		margin-bottom: 30px;
+	}
+	#hero_form{
+		width: 0px;
 	}
 	.hero__search__form {
 		width: 485px;
@@ -3182,6 +3203,25 @@ ol {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.register-form{
+		width: 300px;
+		display: inline-flexbox;
+		margin-left: 20px;
+		margin-top: 250px;
+	}
+	.container{
+		margin-bottom: 350px;
+	}
+	.footer-spad{
+		margin-top: 500px;
+	}
+	.fondologin{
+		visibility: hidden;
+	}
+	.timedate{
+		margin-bottom: 125px;
+		margin-left: 100px;
+	}
 	.hero__categories {
 		margin-bottom: 30px;
 	}

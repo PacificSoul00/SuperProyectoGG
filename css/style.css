@@ -47,7 +47,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Cairo", sans-serif;
+	font-family: "Cairo",sans-serif;
 }
 
 h1 {
@@ -104,12 +104,26 @@ p {
 	background-color: #673ab7;
 }
 
+#inputComuna{
+	width: 100px; 
+	overflow: auto;
+	height: 70px; 
+}
+
 #error{
 	background-color: red;
 	color: white;
 	border-radius: 7px;
 	padding: 10px 10px;
 }
+
+#guardado{
+	background-color: rgb(17, 172, 56);
+	color: white;
+	border-radius: 7px;
+	padding: 10px 10px;
+}
+
 
 .login-form{
 	width: 350px;
@@ -2939,10 +2953,11 @@ ol {
 		margin-top: 100px;
 	}
 	.tamano-comuna{
-		width: 200px;
+		width: 250px;
+		position: absolute;
 	}
 	.tamano-region{
-		width: 200px;
+		width: 250px;
 		margin-top: 1px;
 		margin-bottom: 20px;
 	}

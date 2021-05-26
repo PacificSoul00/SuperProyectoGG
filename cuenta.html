@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/select2.min.css"/>
+
+    
     <style>
         body { background-color: #ffff; }
     </style>
@@ -149,16 +152,15 @@
      <div id="hero" class=" justify-content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
             <img class="fondologin" src="img/banner/fondo.jpg" alt="">
-            <form id="register-form" class="register-form" action="">
+            <form id="cuenta-form" class="register-form" action="">
                 <div class="form-group">
                     <label for="uname" class="text-white">Dirección </label>
                     <input type="text" class="form-control" placeholder="Ingrese su calle" name="direccion" id="direccion">
                 </div>
                 <div class="form-row"> 
-                    <div class="col-md-6">
-                        <div class="form-group">
+                    <div class="col-md-6" >                      
                             <label class="text-white texto-region" for="inputRegion">Region</label>
-                            <select id="inputRegion" class="form-control tamano-region" name="inputRegion" placeholder="Selecciona tu región">
+                            <select  id="inputRegion" class="tamano-region" name="inputRegion" placeholder="Selecciona tu región" style="width: 1px">
                                 <option value=""></option>
                                 <option value="CL-AI">Aysén</option>
                                 <option value="CL-AN">Antofagasta</option>                                
@@ -178,12 +180,10 @@
                                 <option value="CL-NB">Ñuble</option>
                                 
                             </select>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="text-white" for="inputComuna">Comuna</label>
-                            <select name="inputComuna" class="form-control tamano-comuna" id="inputComuna" placeholder="Selecciona tu comuna">
+                        <div class="col-md-6">
+                            <label class="text-white" for="inputComuna">Comuna</label>                               
+                            <select name="inputComuna" class="tamano-comuna" id="inputComuna" placeholder="Selecciona tu comuna" size="5">
                                 <option value="" selected="selected"></option>
                                 <option value="441">ABTAO</option>
                                 <option value="1">ACHAO</option>
@@ -837,7 +837,7 @@
                                 <option value="369">SAN FRANCISCO DE LIMACHE</option>
                                 <option value="267">SAN FRANCISCO DE MOSTAZAL</option>
                                 <option value="809">SAN GABRIEL</option>
-                                <option value="268">SAN GREGORIO</option>
+                                <option value="268">SAN GREGORIO DE NIQUEN</option>
                                 <option value="374">SAN IGNACIO</option>
                                 <option value="269">SAN JAVIER</option>
                                 <option value="344">SAN JOAQUIN</option>
@@ -867,7 +867,7 @@
                                 <option value="280">SANTA JUANA</option>
                                 <option value="281">SANTA MARIA</option>
                                 <option value="812">SANTA ROSA DE CHENA</option>
-                                <option value="282">SANTIAGO</option>
+                                <option value="282" selected="selected">SANTIAGO</option>
                                 <option value="376">SANTO DOMINGO</option>
                                 <option value="705">SECTOR LA PENA</option>
                                 <option value="821">SECTOR LA PEÑA</option>
@@ -951,9 +951,11 @@
                                 <option value="749">YUSTE</option>
                                 <option value="314">ZAPALLAR</option>
                                 <option value="672">ZEMITA</option>
+                                
                             </select>
+                            
                         </div>
-                    </div>
+                    
                 </div>
                 <div class="form-group">
                     <label class="text-white" for="inputInd">Datos adicionales/Calle de referencia (Opcional)</label>
@@ -971,10 +973,11 @@
                     <label for="comment" class="text-white">Nota (Opcional) </label>
                     <textarea class="form-control" rows="3" placeholder="Ingrese alguna observacion Ej:Dejar en porteria/portería"></textarea>                              
                 </div>        
-                <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" type="submit" onclick="return direccionForm();">Guardar direccion</a> </div>
+                <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" type="submit" onclick="return direccionForm();">Revisar Dirección</a> </div>
                 <div class="bottom-text">
                 </div>
-                <div style="visibility:hidden;" id="error"></div>    
+                <div style="visibility:hidden;" id="error"></div> 
+                <div style="visibility:hidden;" id="guardado"></div>     
             </form>
  
 
@@ -984,7 +987,6 @@
      </div>
     </div>
     
-    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-spad">
@@ -1062,6 +1064,9 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/validaciones.js"></script>
+    <script src="js/select2.min.js"></script>
+   
+
     <!--Llamada a la Api de Fecha y Hora-->
     <script>
         $(

@@ -11,10 +11,12 @@ var userlog = document.getElementById('loginusuario');
 var passlog = document.getElementById('loginPassword');
 var expReg= /^[a-zA-Z0-9.+-]+@+[a-zA-Z0-9-]+.[a-zA-Z0-9-.]/;
 // Variables de Direccion
+var fonoReg = /[+0-9]{9,12}/;
 var direccion = document.getElementById('direccion');
 var region = document.getElementById('inputRegion');
 var comuna = document.getElementById('inputComuna');
 var fono = document.getElementById('inputFono');
+var guardado = document.getElementById('guardado');
 
 
 
@@ -80,6 +82,12 @@ var form = document.getElementById('register-form');
     });
 
 
+    jQuery(document).ready(function($){
+        $(document).ready(function() {
+            $('.mi-selector').select2();
+        });
+    });
+
 function inicioForm(){
     console.log('Enviando formulario...');
 
@@ -105,8 +113,10 @@ function inicioForm(){
 
 function direccionForm(){
     console.log('Enviando formulario...');
+    document.getElementById('guardado').style.visibility = 'hidden';
 
     var mensajesError = [];
+    var save = [];
 
     if(direccion.value === null || direccion.value === ''){
         mensajesError.push('Porfavor ingrese su direccion')
@@ -127,16 +137,29 @@ function direccionForm(){
 
     }
 
+    var esValido = fonoReg.test(fono.value);
+    if(esValido == false){
+        mensajesError.push('Su telefono no es valido')
+    }
+
+
     error.innerHTML = mensajesError.join('<br />  ');
     document.getElementById('error').style.visibility = 'visible';
 
     
-    if(direccion.value === null || direccion.value === '' || region.value === null || region.value === ''||comuna.value === null || comuna.value === ''||fono.value === null || fono.value === ''){
+    if(direccion.value === null || direccion.value === '' || region.value === null || region.value === ''||comuna.value === null || comuna.value === ''||fono.value === null || fono.value === ''|| esValido == false){
         return false;
     }
 
     else{
         document.getElementById('error').style.visibility = 'hidden';
-        return window.location.href = 'index.html'
+        save.push("Su direccion tiene cobertura para despacho 👍")
+        guardado.innerHTML = save.join('<br /> ');
+        document.getElementById('guardado').style.visibility = 'visible';
+        document.getElementById("cuenta-form").reset();
+
     }
+    
+
+
 }
